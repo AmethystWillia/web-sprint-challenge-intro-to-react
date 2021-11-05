@@ -1,11 +1,39 @@
 // Importing cool stuff
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import axios from 'axios';
+import styled from 'styled-components'
+import './index.css'
 
 // Import components
 import Character from './components/Character';
 import Details from './components/Details';
+
+// Styling
+const StyledApp = styled.div`
+  marging: 2%;
+  padding: 1%;
+  flex-flow: column wrap;
+  justify-content: center;
+  text-align: center;
+
+  h1 {
+    font-size: 6.2rem;
+    -webkit-text-fill-color: black;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: gold;
+
+    text-shadow: 3px 3px gold;
+  }
+  h2 {
+    font-size: 3.4rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
+  p {
+    font-size: 1.8rem;
+  }
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -36,7 +64,7 @@ const App = () => {
   }, [])
 
   return (
-    <div className="App">
+    <StyledApp className="App">
       <h1 className="Header">Characters</h1>
       {swInfo.map(info => {
         return <Character info={info} openDetails={openDetails} />
@@ -44,7 +72,7 @@ const App = () => {
       {
         currentSwId && <Details swId={currentSwId} close={closeDetails} />
       }
-    </div>
+    </StyledApp>
   );
 }
 

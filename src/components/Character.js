@@ -9,7 +9,7 @@ export default function Character(props) {
     // Return divs
     return (
         <div className='character'>
-            <h3>{charaInfo.name}</h3>
+            <h2>{charaInfo.name}</h2>
             <button onClick={() => {props.openDetails(charaInfo.url)}}>
                 View Details
             </button>
