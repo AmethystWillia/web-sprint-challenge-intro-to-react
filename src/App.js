@@ -12,9 +12,29 @@ import Details from './components/Details';
 const StyledApp = styled.div`
   marging: 2%;
   padding: 1%;
+
+  display: flex;
   flex-flow: column wrap;
   justify-content: center;
+  align-items: center;
   text-align: center;
+
+  button {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    color: gold;
+    padding: 1%;
+    margin: 0 2%;
+
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0, 0.7);
+  }
+  button:hover {
+    color: white;
+    background-color: rgb(100, 100, 100, 0.7);
+    border: 2px solid gold;
+  }
 
   h1 {
     font-size: 6.2rem;
