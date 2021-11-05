@@ -69,16 +69,26 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission format
 
-- [ ] Submit via Codegrade by committing and pushing any new changes to the main branch.
-- [ ] Check Codegrade for automated feedback.
-- [ ] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
-- [ ] Any changes pushed after the deadline will not receive any feedback.
+- [✔] Submit via Codegrade by committing and pushing any new changes to the main branch.
+- [✔] Check Codegrade for automated feedback.
+- [✔] Check Codegrade in the days following the Sprint Challenge for reviewer feedback.
+- [✔] Any changes pushed after the deadline will not receive any feedback.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Put your answers underneath the questions:
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
-1. Describe component state.
-1. Describe props.
-1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+  • React JS is a user interface component library. It solves the problems of dealing with complex states; it manages data without slowing the DOM. One example of this is useEffect. useEffect calls upon specific data only when the data is needed instead of constantly having it at the ready.
+2. Describe component state.
+  • A component state is an object that information that can be modified within the component, like updating the data with something from an API.
+3. Describe props.
+  • Props, short for properties, are used to pass data down from a parent component to a child component.
+4. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+  • Side effects are anything that affects something outside the scope of the current function being executed.
+    To sync an effect to a change of state or prop you would add it/them to the dependency array argument like so:
+      useEffect(() => {
+        fetchData(props.data)
+        .then(res => setData(res.data))
+        .catch(err => console.log(err));
+      }, [PropOrState]);  <-- This is where you set the dependency

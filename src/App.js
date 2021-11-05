@@ -6,7 +6,6 @@ import './index.css'
 
 // Import components
 import Character from './components/Character';
-import Details from './components/Details';
 
 // Styling
 const StyledApp = styled.div`
@@ -23,7 +22,7 @@ const StyledApp = styled.div`
     font-family: 'Orbitron', sans-serif;
     font-size: 1.6rem;
     color: gold;
-    padding: 1%;
+    padding: 2%;
     margin: 0 2%;
 
     border: none;
@@ -48,7 +47,7 @@ const StyledApp = styled.div`
     font-size: 3.4rem;
   }
   h3 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
   p {
     font-size: 1.8rem;
@@ -87,11 +86,8 @@ const App = () => {
     <StyledApp className="App">
       <h1 className="Header">Characters</h1>
       {swInfo.map(info => {
-        return <Character info={info} openDetails={openDetails} />
+        return <Character info={info} openDetails={openDetails} swId={currentSwId} close={closeDetails} />
       })}
-      {
-        currentSwId && <Details swId={currentSwId} close={closeDetails} />
-      }
     </StyledApp>
   );
 }
