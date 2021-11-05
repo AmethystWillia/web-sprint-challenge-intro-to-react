@@ -1,6 +1,6 @@
 // Write your Character component here
 // Importing React
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 export default function Character(props) {
     // Declaring constant
@@ -10,7 +10,7 @@ export default function Character(props) {
     return (
         <div className='character'>
             <h3>{charaInfo.name}</h3>
-            <button onClick={() => {props.openDetails(charaInfo.name)}}>
+            <button onClick={() => {props.openDetails(charaInfo.url)}}>
                 View Details
             </button>
         </div>

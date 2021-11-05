@@ -5,6 +5,7 @@ import axios from 'axios';
 
 // Import components
 import Character from './components/Character';
+import Details from './components/Details';
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -13,8 +14,8 @@ const App = () => {
   const [swInfo, setswInfo] = useState([]);
   const [currentSwId, setCurrentSwId] = useState(null);
 
-  const openDetails = name => {
-    setCurrentSwId(name);
+  const openDetails = url => {
+    setCurrentSwId(url);
   };
   const closeDetails = () => {
     setCurrentSwId(null);
@@ -40,6 +41,9 @@ const App = () => {
       {swInfo.map(info => {
         return <Character info={info} openDetails={openDetails} />
       })}
+      {
+        currentSwId && <Details swId={currentSwId} close={closeDetails} />
+      }
     </div>
   );
 }
